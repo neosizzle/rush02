@@ -12,7 +12,7 @@ int	ft_atoi(char *str)
 	res = 0;
 	while (is_whitespace(*str))
 		str++;
-	while (*str)
+	while (*str && (*str >= '0' && *str <= '9'))
 	{
 		res *= 10;
 		res += (*str - '0');
