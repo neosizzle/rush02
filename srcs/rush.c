@@ -17,11 +17,11 @@
 // 1 if its is, 0 otherwise
 //
 //Please document and declare other variables if needed.
-t_entry *g_head_entry;
-int	g_is_first;
-int	g_dict_err;
-int	g_read_err;
-int	g_input_num_err;
+t_entry	*g_head_entry;
+int		g_is_first;
+int		g_dict_err;
+int		g_read_err;
+int		g_input_num_err;
 
 //check for errors and trim input
 //1. checks for valid num of arguments
@@ -40,5 +40,4 @@ void	rush(int argc, char *argv[])
 	else
 		build_dict(DEFAULT_DICT);
 	//dict now built, math logic goes here
-	
 }
