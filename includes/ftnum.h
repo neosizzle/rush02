@@ -1,5 +1,5 @@
-#ifndef FT_NUM_H
-# define FT_NUM_H
+#ifndef FTNUM_H
+# define FTNUM_H
 
 int	is_whitespace(char c);
 
