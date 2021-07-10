@@ -4,7 +4,7 @@
 # include <stdlib.h>
 # include <fctnl.h>
 
-# define DEFAULT_DICT "dicts/default.dict"
+# define DEFAULT_DICT "dicts/numbers.dict"
 
 typedef struct s_entry
 {
