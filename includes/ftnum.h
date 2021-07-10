@@ -3,6 +3,10 @@
 
 int				is_whitespace(char c);
 
+int				is_numeric(char c);
+
 unsigned int	ft_atoi(char *str);
+
+long long		ft_atoll(char *str);
 
 #endif

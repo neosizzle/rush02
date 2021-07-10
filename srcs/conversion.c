@@ -27,9 +27,9 @@ unsigned int	get_highest_ten_mulp(unsigned int value)
 		temp /= 10;
 		ten_mulp *= 10;
 	}
-	if (!get_entry_value(ten_mulp))
+	if (!get_entry_value(g_root, ten_mulp))
 	{
-		while (!get_entry_value(ten_mulp))
+		while (!get_entry_value(g_root, ten_mulp))
 			ten_mulp /= 10;
 		return (ten_mulp);
 	}
@@ -40,14 +40,14 @@ unsigned int	get_highest_ten_mulp(unsigned int value)
 void	handle_tens(unsigned int num)
 {
 	if (num <= 19)
-		put_str(get_entry_value(num));
+		put_str(get_entry_value(g_root, num));
 	else
 	{
-		put_str(get_entry_value((num / 10) * 10));
+		put_str(get_entry_value(g_root, (num / 10) * 10));
 		if (num % 10)
 		{
 			put_str("-");
-			put_str(get_entry_value(num % 10));
+			put_str(get_entry_value(g_root, num % 10));
 		}
 	}
 }
@@ -59,8 +59,7 @@ void	convert_to_words(unsigned int num)
 	highest_ten_mulp = get_highest_ten_mulp(num);
 	if (num <= 9)
 	{
-		if (num > 0)
-			put_str(get_entry_value((num)));
+		put_str(get_entry_value(g_root, (num)));
 		return ;
 	}
 	if (highest_ten_mulp == 10)
@@ -70,13 +69,13 @@ void	convert_to_words(unsigned int num)
 	}
 	convert_to_words(num / highest_ten_mulp);
 	write(1, " ", 1);
-	put_str(get_entry_value(highest_ten_mulp));
+	put_str(get_entry_value(g_root, highest_ten_mulp));
 	if (num % highest_ten_mulp != 0)
 	{
 		write(1, " ", 1);
 		if (num % highest_ten_mulp > 9)
 			convert_to_words(num % highest_ten_mulp);
 		else
-			put_str(get_entry_value(num % highest_ten_mulp));
+			put_str(get_entry_value(g_root, num % highest_ten_mulp));
 	}
 }

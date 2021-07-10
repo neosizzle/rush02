@@ -2,6 +2,8 @@
 #include "fterr.h"
 #include "ftdict.h"
 #include "ftstr.h"
+#include "ftnum.h"
+#include "conversion.h"
 
 //GLOAL VARIABLES
 //g_*_error are error varlables. 1 or 0.
@@ -32,14 +34,23 @@ int		g_input_num_err;
 
 void	rush(int argc, char *argv[])
 {
+	unsigned int	num;
+
 	if (argc > 3)
 	{
 		ft_putstr(ARGC_ERR_MSG);
 		return ;
 	}
 	else if (argc == 3)
+	{
 		build_dict(argv[1]);
+		num = ft_atoi(argv[2]);
+		convert_to_words(num);
+	}
 	else
+	{
 		build_dict(DEFAULT_DICT);
-	//dict now built, math logic goes here
+		num = ft_atoi(argv[1]);
+		convert_to_words(num);
+	}
 }
