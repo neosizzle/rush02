@@ -1,3 +1,5 @@
+#include "ftbst.h"
+#include "ftnum.h"
 #include "ftstr.h"
 #include "ftdict.h"
 #include "fterr.h"
@@ -21,12 +23,12 @@ void	process_line(char *key, char *value)
 		}
 		value = trim(extract(g_line, 1));
 		key = trim(extract(g_line, 0));
-		//bst_insert(char *key, char *value);
-		ft_putstr("key : ");
-		ft_putstr(key);
-		ft_putstr("val : ");
-		ft_putstr(value);
-		ft_putstr("\n");
+		if (ft_strlen(key) > 10)
+			continue ;
+		if (g_root == NULL)
+			g_root = insert_entry(g_root, ft_atoi(key), value);
+		else
+			insert_entry(g_root, ft_atoi(key), value);
 		g_line = read_line(g_fd);
 	}
 }

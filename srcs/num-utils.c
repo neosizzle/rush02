@@ -5,9 +5,9 @@ int	is_whitespace(char c)
 	return (0);
 }
 
-int	ft_atoi(char *str)
+unsigned int	ft_atoi(char *str)
 {
-	int	res;
+	unsigned int	res;
 
 	res = 0;
 	while (is_whitespace(*str))

@@ -14,7 +14,7 @@ t_node	*create_node(t_entry *entry)
 }
 
 // Creates a new entry structure
-t_entry	*create_entry(int key, char *value)
+t_entry	*create_entry(unsigned int key, char *value)
 {
 	t_entry	*entry;
 
@@ -25,7 +25,7 @@ t_entry	*create_entry(int key, char *value)
 }
 
 // Inserts a new dict entry into BST
-t_node	*insert_entry(t_node *root, int key, char *value)
+t_node	*insert_entry(t_node *root, unsigned int key, char *value)
 {
 	t_entry	*entry;
 
@@ -42,9 +42,9 @@ t_node	*insert_entry(t_node *root, int key, char *value)
 }
 
 // Given an entry key, returns the corresponding value
-char	*get_entry_value(t_node *root, int key)
+char	*get_entry_value(t_node *root, unsigned int key)
 {
-	if (root == NULL || root->entry == NULL)
+	if (root == NULL)
 		return (NULL);
 	if (root->entry->key == key)
 		return (root->entry->value);
