@@ -12,6 +12,9 @@ typedef struct s_node {
 	struct s_node	*right;
 }	t_node;
 
+// Initialize to NULL
+t_node	*g_root;
+
 t_node	*create_node(t_entry *entry);
 
 t_entry  *create_entry(int key, char *value);
