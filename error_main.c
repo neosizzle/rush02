@@ -53,6 +53,12 @@ void	file_open(char *str)
 {
 }
 
+void	print_error(void)
+{
+	write(1, "Error", 4);
+	write(1, "\n", 1);
+}
+
 int	main(int argc, char *argv[])
 {
 	unsigned int	input;// im not sure if this is needed for u guys la
@@ -66,7 +72,7 @@ int	main(int argc, char *argv[])
 			print_output();//output
 		}
 		else
-			write(1, "Error", 4);
+			print_error();
 	}
 	else if (argc == 3)
 	{
@@ -75,8 +81,8 @@ int	main(int argc, char *argv[])
 			file_open("argv[1]");
 			print_output();
 		else
-			write(1, "Error", 4);
+			print_error();
 	}
 	else 
-		write(1, "error", 4);
+		print_error();
 }
