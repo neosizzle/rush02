@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "ftbst.h"
 
 // Creates a new BST node structure
