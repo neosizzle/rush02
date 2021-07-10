@@ -1,3 +1,7 @@
+#include "fterr.h"
+#include "ftdict.h"
+#include "ftstr.h"
+
 //GLOAL VARIABLES
 //g_*_error are error varlables. 1 or 0.
 // if they are 1, which means there is an err

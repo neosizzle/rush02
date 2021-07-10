@@ -31,7 +31,7 @@ void	ft_strcpy(char *dst, char *begin, char *end)
 	i = 0;
 	while (begin <= end)
 	{
-		dest[i++] = *begin;
+		dst[i++] = *begin;
 		begin++;
 	}
 	*begin = 0;

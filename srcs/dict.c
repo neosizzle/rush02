@@ -1,5 +1,6 @@
 #include "ftdict.h"
 #include "ftstr.h"
+#include "fterr.h"
 
 //GLOBAL VARIABLES
 //g_fd yields the value of current fd
@@ -9,6 +10,7 @@
 //
 //Please declare and document any other global variables
 
+int		g_eof;
 int		g_fd;
 char	*g_line;
 
@@ -63,6 +65,7 @@ void	build_dict(char *dict)
 		if (g_eof++)
 			break ;
 		ft_putstr(g_line);
+		ft_putstr("\n");
 		g_line = read_line(g_fd);
 	}
 }

@@ -2,7 +2,8 @@
 # define FTDICT_H
 
 # include <stdlib.h>
-# include <fctnl.h>
+# include <fcntl.h>
+# include <unistd.h>
 
 # define DEFAULT_DICT "dicts/numbers.dict"
 
