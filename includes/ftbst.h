@@ -24,4 +24,6 @@ t_entry  *create_entry(int key, char *value);
 
 t_node	*insert_entry(t_node *root, int key, char *value);
 
+char	*get_entry_value(t_node *root, int key);
+
 #endif
