@@ -59,8 +59,7 @@ void	convert_to_words(unsigned int num)
 	highest_ten_mulp = get_highest_ten_mulp(num);
 	if (num <= 9)
 	{
-		if (num > 0)
-			put_str(get_entry_value(g_root, (num)));
+		put_str(get_entry_value(g_root, (num)));
 		return ;
 	}
 	if (highest_ten_mulp == 10)
