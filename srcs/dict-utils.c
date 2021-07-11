@@ -3,7 +3,7 @@
 #include "ftstr.h"
 #include "ftdict.h"
 #include "fterr.h"
-#include <stdlib.h>
+#include <stdio.h>
 
 unsigned int	g_d_0[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 unsigned int	g_d_1[] = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
@@ -15,7 +15,7 @@ unsigned int	get_power_int(int i)
 {
 	unsigned int	res;
 
-	res = 10;
+	res = 1;
 	while (i-- > 0)
 		res *= 10;
 	return (res);
@@ -26,7 +26,6 @@ unsigned int	get_power_int(int i)
 int	has_def_keys(void)
 {
 	int	i;
-	//int	j;
 
 	i = 0;
 	while (i < 10)
@@ -36,6 +35,13 @@ int	has_def_keys(void)
 		|| get_entry_value(g_root,g_d_2[i]) == NULL)
 			return (0);
 		i++;
+	}
+	i = 3;
+	while(i <= 9)
+	{
+		if (get_entry_value(g_root, get_power_int(i)) == NULL)
+			return (0);
+		i += 3;
 	}
 	return (1);
 }
