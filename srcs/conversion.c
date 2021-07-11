@@ -52,6 +52,25 @@ void	handle_tens(unsigned int num)
 	}
 }
 
+void	handle_aft_mod(unsigned int num, unsigned int ten_mulp)
+{
+	write(1, " ", 1);
+	if (num % ten_mulp > 9 && ten_mulp == 100)
+		write(1, "and ", 4);
+	if (num % ten_mulp > 9)
+		convert_to_words(num % ten_mulp);
+	else
+	{
+		write(1, "and ", 4);
+		put_str(get_entry_value(g_root, num % ten_mulp));
+	}
+}
+
+int is_third_place(int ten_mulp)
+{
+	return (ten_mulp == 1000 || ten_mulp == 1000000 || ten_mulp == 1000000000);
+}
+
 void	convert_to_words(unsigned int num)
 {
 	unsigned int	highest_ten_mulp;
@@ -72,10 +91,8 @@ void	convert_to_words(unsigned int num)
 	put_str(get_entry_value(g_root, highest_ten_mulp));
 	if (num % highest_ten_mulp != 0)
 	{
-		write(1, " ", 1);
-		if (num % highest_ten_mulp > 9)
-			convert_to_words(num % highest_ten_mulp);
-		else
-			put_str(get_entry_value(g_root, num % highest_ten_mulp));
+		if (is_third_place(highest_ten_mulp))
+			write(1, ",", 2);
+		handle_aft_mod(num, highest_ten_mulp);
 	}
 }
