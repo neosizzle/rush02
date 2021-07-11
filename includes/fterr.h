@@ -1,8 +1,7 @@
 #ifndef FTERR_H
 # define FTERR_H
 
-# define TOO_MANY_ARGC_ERR_MSG "Error: Too many arguments\n"
-# define NOT_ENOUGH_ARGC_ERR_MSG "Error: Insufficient arguments\n"
+# define ARGC_ERR_MSG "Error: Invalid argument count\n"
 # define INPUT_ERR_MSG "Error\n"
 # define BAD_DICT_ERR_MSG "Dict Error\n"
 # define READ_ERR_MSG "Dict Error\n"

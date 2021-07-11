@@ -48,9 +48,7 @@ int	main(int argc, char *argv[])
 		rush (argc, argv);
 		return (0);
 	}
-	else if (argc > 3)
-		ft_putstr(TOO_MANY_ARGC_ERR_MSG);
-	else if (argc < 2)
-		ft_putstr(NOT_ENOUGH_ARGC_ERR_MSG);
+	else
+		ft_putstr(ARGC_ERR_MSG);
 	return (1);
 }

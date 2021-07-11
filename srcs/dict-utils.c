@@ -30,14 +30,14 @@ int	has_def_keys(void)
 	i = 0;
 	while (i < 10)
 	{
-		if (get_entry_value(g_root,g_d_0[i]) == NULL
-		|| get_entry_value(g_root,g_d_1[i]) == NULL
-		|| get_entry_value(g_root,g_d_2[i]) == NULL)
+		if (get_entry_value(g_root, g_d_0[i]) == NULL
+			 || get_entry_value(g_root, g_d_1[i]) == NULL
+			 || get_entry_value(g_root, g_d_2[i]) == NULL)
 			return (0);
 		i++;
 	}
 	i = 3;
-	while(i <= 9)
+	while (i <= 9)
 	{
 		if (get_entry_value(g_root, get_power_int(i)) == NULL)
 			return (0);
