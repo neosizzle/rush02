@@ -36,12 +36,7 @@ void	rush(int argc, char *argv[])
 {
 	unsigned int	num;
 
-	if (argc > 3)
-	{
-		ft_putstr(ARGC_ERR_MSG);
-		return ;
-	}
-	else if (argc == 3)
+	if (argc == 3)
 	{
 		build_dict(argv[1]);
 		num = ft_atoi(argv[2]);
