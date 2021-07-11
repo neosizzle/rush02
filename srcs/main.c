@@ -13,6 +13,10 @@ int	is_valid_unsigned(char *str)
 	res = 0;
 	while (is_whitespace(*str))
 		str++;
+	if (*str == '-')
+		return (0);
+	while (*str == '+')
+		str++;
 	while (i < ft_strlen(str))
 	{
 		if (!is_numeric(str[i]))

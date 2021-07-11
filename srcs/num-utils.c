@@ -19,6 +19,8 @@ unsigned int	ft_atoi(char *str)
 	res = 0;
 	while (is_whitespace(*str))
 		str++;
+	if (*str == '+')
+		str++;
 	while (*str && (*str >= '0' && *str <= '9'))
 	{
 		res *= 10;
@@ -30,16 +32,18 @@ unsigned int	ft_atoi(char *str)
 
 long long	ft_atoll(char *str)
 {
-	long long	pp;
+	long long	res;
 
-	pp = 0;
+	res = 0;
 	while (is_whitespace(*str))
+		str++;
+	while (*str == '+')
 		str++;
 	while (*str && (*str >= '0' && *str <= '9'))
 	{
-		pp *= 10;
-		pp += (*str - '0');
+		res *= 10;
+		res += (*str - '0');
 		str++;
 	}
-	return (pp);
+	return (res);
 }
