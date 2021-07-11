@@ -1,4 +1,4 @@
-SRCS = srcs/main.c srcs/dict.c srcs/dict-utils.c srcs/rush.c srcs/str-utils.c srcs/bst.c srcs/num-utils.c srcs/conversion.c
+SRCS = srcs/main.c srcs/dict.c srcs/dict-utils.c srcs/rush.c srcs/str-utils.c srcs/bst.c srcs/num-utils.c srcs/conversion.c srcs/cvrs-hlpr.c
 OBJS= ${SRCS:.c=.o}
 CCFLAGS = -Wall -Werror -Wextra
 CC = gcc
