@@ -42,13 +42,13 @@ int	main(int argc, char *argv[])
 			num = argv[2];
 		if (!is_valid_unsigned(num))
 		{
-			ft_putstr("Error\n");
+			ft_putstr(INPUT_ERR_MSG);
 			return (1);
 		}
 		rush (argc, argv);
 		return (0);
 	}
 	else
-		ft_putstr("Error\n");
+		ft_putstr(ARGC_ERR_MSG);
 	return (1);
 }
