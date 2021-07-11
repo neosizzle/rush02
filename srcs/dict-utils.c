@@ -3,6 +3,42 @@
 #include "ftstr.h"
 #include "ftdict.h"
 #include "fterr.h"
+#include <stdlib.h>
+
+unsigned int	g_d_0[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+unsigned int	g_d_1[] = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+unsigned int	g_d_2[] = {20, 30, 40, 50, 60, 70, 80, 90, 100, 1000};
+
+//this helper function helps generate numbers that
+//represents powers of 10
+unsigned int	get_power_int(int i)
+{
+	unsigned int	res;
+
+	res = 10;
+	while (i-- > 0)
+		res *= 10;
+	return (res);
+}
+
+//this helper function returns 1 if 
+//all the required keys exist in the dict
+int	has_def_keys(void)
+{
+	int	i;
+	//int	j;
+
+	i = 0;
+	while (i < 10)
+	{
+		if (get_entry_value(g_root,g_d_0[i]) == NULL
+		|| get_entry_value(g_root,g_d_1[i]) == NULL
+		|| get_entry_value(g_root,g_d_2[i]) == NULL)
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 void	process_line(char *key, char *value)
 {

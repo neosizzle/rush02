@@ -26,6 +26,12 @@ int		g_dict_err;
 int		g_read_err;
 int		g_input_num_err;
 
+//helper function to return true if there is an error
+int	check_err(void)
+{
+	return (g_dict_err || g_read_err || g_input_num_err);
+}
+
 //check for errors and trim input
 //1. checks for valid num of arguments
 //   and throw err if num of args invalid (done) - jng
@@ -45,12 +51,16 @@ void	rush(int argc, char *argv[])
 	{
 		build_dict(argv[1]);
 		num = ft_atoi(argv[2]);
+		if (check_err())
+			return ;
 		convert_to_words(num);
 	}
 	else
 	{
 		build_dict(DEFAULT_DICT);
 		num = ft_atoi(argv[1]);
+		if (check_err())
+			return ;
 		convert_to_words(num);
 	}
 }

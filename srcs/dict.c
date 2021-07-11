@@ -8,6 +8,8 @@
 //g_line stores the state of current line read 
 //in the .dict files
 //
+//g_eof will be 1 or 0 depending if the file ptr is at
+//the end of the file
 //Please declare and document any other global variables
 
 int		g_eof;
@@ -119,6 +121,7 @@ void	build_dict(char *dict)
 	g_fd = open(dict, O_RDONLY);
 	if (g_fd < 0)
 	{
+		g_read_err = 1;
 		ft_putstr(READ_ERR_MSG);
 		return ;
 	}
@@ -127,4 +130,9 @@ void	build_dict(char *dict)
 	curr_key = 0;
 	curr_val = 0;
 	process_line(curr_key, curr_val);
+	if (!has_def_keys())
+	{
+		g_dict_err = 1;
+		ft_putstr(BAD_DICT_ERR_MSG);
+	}
 }
