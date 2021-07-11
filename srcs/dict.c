@@ -38,7 +38,7 @@ char	*read_line(int fd)
 		{
 			free(res);
 			g_read_err = 1;
-			ft_putstr("Error : Max line width.\n");
+			ft_putstr(MAX_LINE_ERR_MSG);
 			return (0);
 		}
 		if (res[i] == '\n')
